@@ -1,5 +1,5 @@
 import os
-
+import sys
 import pandas as pd
 
 def split_excel_by_column(file_path, split_column, mapping_sheet, mapping_column_key, mapping_column_value, output_dir):
@@ -30,12 +30,12 @@ def split_excel_by_column(file_path, split_column, mapping_sheet, mapping_column
 
         print(f"Saved file : {output_file}")
 
-
-file_path = r'C:\Users\wnaashok\Downloads\TEST folder\TEST.xlsx'
-split_column = 'vendor_code'
-mapping_sheet ='Sheet2'
-mapping_column_key ='Name'
-mapping_column_value = 'Task ID'
-output_dir = r'C:\Users\wnaashok\Downloads\TEST folder'
+if __name__ == "__main__":
+    file_path = input("Enter the Excel File Path : ")
+    split_column = input("Enter the Column To Split by : ")
+    mapping_sheet = input("Enter the Sheet Name containing the Renaming ID's : ")
+    mapping_column_key = input("Enter the Vendor Code Column Name: ")
+    mapping_column_value = input("Enter the Column to which the Files has to be Renamed : ")
+    output_dir = input("Enter the Output Path to be Saved : ")
 
 split_excel_by_column(file_path, split_column, mapping_sheet, mapping_column_key, mapping_column_value, output_dir)
