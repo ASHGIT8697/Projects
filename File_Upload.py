@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-file_path = r'C:\Users\mail2\AppData\Local\Programs\Python\Python312\PYTHON\File upload automation\dist\data.xlsx'  # Replace with the path to your Excel file
+file_path = input("Enter the Excel File Path : ")
 df = pd.read_excel(file_path)
 
 # Function to set up and open a new browser window
